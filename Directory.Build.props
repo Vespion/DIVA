@@ -1,0 +1,23 @@
+<Project>
+	<PropertyGroup>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Deterministic>true</Deterministic>
+		<RootNamespace>VespionSoftworks.DIVA.$(MSBuildProjectName)</RootNamespace>
+		<AssemblyName>$(RootNamespace)</AssemblyName>
+		<NeutralLanguage>en-GB</NeutralLanguage>
+
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+
+		<!-- Required for Hot Reload (See https://github.com/dotnet/sdk/issues/36666) -->
+		<IncludeSourceRevisionInInformationalVersion Condition="'$(Configuration)'=='Debug'">false</IncludeSourceRevisionInInformationalVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+</Project>
