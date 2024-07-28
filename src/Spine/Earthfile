@@ -1,0 +1,7 @@
+VERSION 0.8
+IMPORT ../../.config AS build-utils
+
+generate-package.json:
+	FROM build-utils+changeset-builder
+	DO build-utils+CREATE_PACKAGE_FROM_PROJECT --ProjectFile Spine.csproj
+	SAVE ARTIFACT package.json AS LOCAL ./package.json

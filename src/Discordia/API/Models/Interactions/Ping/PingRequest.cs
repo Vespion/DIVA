@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using Discordia.API.Models;
 using VespionSoftworks.DIVA.Discordia.API.Models.Entitlements;
 using VespionSoftworks.DIVA.Discordia.API.Models.Interactions.Base;
 using VespionSoftworks.DIVA.Discordia.Models;

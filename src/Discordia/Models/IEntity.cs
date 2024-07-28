@@ -1,6 +1,4 @@
-﻿using VespionSoftworks.DIVA.Discordia.Models;
-
-namespace Discordia.Models;
+﻿namespace VespionSoftworks.DIVA.Discordia.Models;
 
 public interface IEntity<out TId>
 	where TId : IEquatable<TId>

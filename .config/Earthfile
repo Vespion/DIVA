@@ -1,0 +1,18 @@
+VERSION 0.8
+
+debian-builder:
+	FROM debian:trixie-slim
+	RUN apt-get update
+	RUN apt-get upgrade -y
+
+changeset-builder:
+	FROM +debian-builder
+	RUN apt-get install -y jq yq
+	RUN apt-get install -y nodejs npm
+	RUN npm install -g @changesets/cli @changesets/changelog-github
+
+CREATE_PACKAGE_FROM_PROJECT:
+	FUNCTION
+	ARG ProjectFile
+	COPY $ProjectFile .
+   	RUN cat $ProjectFile | xq-python --arg name $ProjectFile '{ name: ($name | match("(?:.*\\\\)?(.*)\\..*").captures[0].string | ascii_downcase), private: true, version: ((try [.Project.PropertyGroup[].Version] // [.Project.PropertyGroup.Version]) | (.. | arrays) |= if any(values) then map(values) else [{}] end | .[-1]), dependencies: (if [.Project.ItemGroup[].ProjectReference][-1] == null then {} else [.Project.ItemGroup[].ProjectReference] | flatten | [.[]."@Include"] | (.. | arrays) |= if any(values) then map(values) else [{}] end | [foreach .[] as $item (0; ($item | match(".*\\\\(.*)\\..*").captures[0].string | ascii_downcase))] | reduce .[] as $i ({}; .[$i] = "workspace:\($i)") end)}' > package.json

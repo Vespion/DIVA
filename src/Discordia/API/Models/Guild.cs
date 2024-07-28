@@ -1,4 +1,4 @@
-﻿namespace Discordia.API.Models;
+﻿namespace VespionSoftworks.DIVA.Discordia.API.Models;
 
 public readonly record struct Guild
 {

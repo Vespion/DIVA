@@ -1,7 +1,5 @@
 ﻿using System.Globalization;
 using System.Text.Json.Serialization;
-using Discordia.API.Models;
-using Discordia.Models;
 using VespionSoftworks.DIVA.Discordia.API.Models.Entitlements;
 using VespionSoftworks.DIVA.Discordia.API.Models.Interactions.Ping;
 using VespionSoftworks.DIVA.Discordia.Models;

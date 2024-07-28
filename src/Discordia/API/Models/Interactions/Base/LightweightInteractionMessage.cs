@@ -1,5 +1,4 @@
-﻿using Discordia.Models;
-using VespionSoftworks.DIVA.Discordia.Models;
+﻿using VespionSoftworks.DIVA.Discordia.Models;
 
 namespace VespionSoftworks.DIVA.Discordia.API.Models.Interactions.Base;
 

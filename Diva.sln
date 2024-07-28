@@ -15,11 +15,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3271B648-DE7E-4ABF-9F31-8E249E4D4A6B}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+		Earthfile = Earthfile
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "src\Gateway\Gateway.csproj", "{11099A4E-E120-430F-8710-BB2166C5B0DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spine", "src\Spine\Spine.csproj", "{11099A4E-E120-430F-8710-BB2166C5B0DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Tests", "tests\Gateway.Tests\Gateway.Tests.csproj", "{9B2D89C7-7746-4D7E-B484-932361BC81F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spine.Tests", "tests\Spine.Tests\Spine.Tests.csproj", "{9B2D89C7-7746-4D7E-B484-932361BC81F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
